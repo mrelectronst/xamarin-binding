@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinApp.MainPage">
+
+    <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+        <BoxView Color="Red" BindingContext="{x:Reference slider}" 
+                 Opacity="{Binding
+                    Path=Value}">
+        </BoxView>
+        <Label
+            BindingContext="{x:Reference slider}"
+            Text="{Binding
+                    Path=Value,
+                    StringFormat='Value : {0:F3}'
+                    }"
+                Opacity="{Binding
+                    Path=Value}"
+                x:Name="label"></Label>
+        <Slider  x:Name="slider"></Slider>
+    </StackLayout>
+
+</ContentPage>
